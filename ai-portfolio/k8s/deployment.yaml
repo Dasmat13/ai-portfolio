@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-portfolio
+  template:
+    metadata:
+      labels:
+        app: ai-portfolio
+    spec:
+      containers:
+       - name: ai-portfolio
+         image: dasmat13/ai-portfolio:latest
+         ports:
+           - containerPort: 3000
