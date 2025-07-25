@@ -13,7 +13,11 @@ spec:
         app: ai-portfolio
     spec:
       containers:
-       - name: ai-portfolio
-         image: dasmat13/ai-portfolio:latest
-         ports:
-           - containerPort: 3000
+        - name: ai-portfolio
+          image: dasmat/ai-portfolio:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
