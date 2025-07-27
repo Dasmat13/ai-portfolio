@@ -6,3 +6,8 @@ terraform.tfvars
 key.json
 node_modules/
 node_modules
+node_modules/
+*.log
+.env
+.next/
+build/
