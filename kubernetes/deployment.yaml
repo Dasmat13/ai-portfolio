@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ai-portfolio
+  labels:
+    app: ai-portfolio
 spec:
   replicas: 1
   selector:
@@ -13,11 +15,7 @@ spec:
         app: ai-portfolio
     spec:
       containers:
-        - name: ai-portfolio
-          image: dasmat/ai-portfolio:latest
-          ports:
-            - containerPort: 3000
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "100m"
+      - name: ai-portfolio
+        image: gcr.io/kube-share-dev/ai-portfolio:latest
+        ports:
+        - containerPort: 80

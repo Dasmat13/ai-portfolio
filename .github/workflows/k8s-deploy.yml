@@ -1,0 +1,33 @@
+# .github/workflows/k8s-deploy.yml
+name: Deploy to GKE
+
+on:
+  workflow_run:
+    workflows: ["Build & Push Docker Image"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Auth to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up kubectl
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          install_components: kubectl
+
+      - name: Configure kubectl
+        run: |
+          gcloud container clusters get-credentials ai-portfolio-cluster --region us-central1
+
+      - name: Deploy to GKE
+        run: kubectl rollout restart deployment ai-portfolio
