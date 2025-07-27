@@ -4,3 +4,5 @@
 *.log
 terraform.tfvars
 key.json
+node_modules/
+node_modules
