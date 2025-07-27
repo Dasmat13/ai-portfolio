@@ -1,39 +1,83 @@
-🧠 AI Portfolio - GPT-Powered DevOps Portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Portfolio - GPT-Powered DevOps Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    code, pre {
+      background: #eee;
+      padding: 0.5rem;
+      border-radius: 4px;
+      display: block;
+      overflow-x: auto;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    hr {
+      margin: 2rem 0;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
 
-An AI-powered developer portfolio built with Next.js 15, OpenRouter API (GPT-4o), TailwindCSS, and Markdown blogging. Includes full CI/CD pipeline, Docker support, Kubernetes (GKE) deployment, and Terraform infrastructure-as-code.
+<h1>🧠 AI Portfolio - GPT-Powered DevOps Portfolio</h1>
 
-  
+<p>An AI-powered developer portfolio built with <strong>Next.js 15</strong>, <strong>OpenRouter API (GPT-4o)</strong>, <strong>TailwindCSS</strong>, and <strong>Markdown blogging</strong>. Includes full <strong>CI/CD pipeline</strong>, <strong>Docker support</strong>, <strong>Kubernetes (GKE) deployment</strong>, and <strong>Terraform infrastructure-as-code</strong>.</p>
 
+<p>
+  <img src="https://img.shields.io/github/repo-size/Dasmat13/ai-portfolio" alt="Repo size" />
+  <img src="https://img.shields.io/github/stars/Dasmat13/ai-portfolio" alt="Stars" />
+  <img src="https://github.com/Dasmat13/ai-portfolio/actions/workflows/deploy.yml/badge.svg" alt="CI Badge" />
+</p>
 
----
+<hr/>
 
-📦 Features
+<h2>📦 Features</h2>
+<ul>
+  <li>✨ <strong>Interactive AI Chatbot</strong> with OpenRouter GPT-4o API</li>
+  <li>🎨 <strong>Responsive UI</strong> with TailwindCSS</li>
+  <li>📄 <strong>Markdown Blog Engine</strong></li>
+  <li>⚙️ <strong>GitHub Actions CI/CD</strong> for auto-deploy</li>
+  <li>🐳 <strong>Dockerized</strong> app with production-ready Dockerfile</li>
+  <li>☸️ <strong>Kubernetes YAMLs</strong> for GKE deployment</li>
+  <li>📈 <strong>Prometheus + Grafana</strong> ready for monitoring</li>
+  <li>🛠️ <strong>Terraform</strong> to provision infra on GCP</li>
+</ul>
 
-✨ Interactive AI Chatbot with OpenRouter GPT-4o API
+<hr/>
 
-🎨 Responsive UI with TailwindCSS
-
-📄 Markdown Blog Engine
-
-⚙️ GitHub Actions CI/CD for auto-deploy
-
-🐳 Dockerized app with production-ready Dockerfile
-
-☘️ Kubernetes YAMLs for GKE deployment
-
-📈 Prometheus + Grafana ready for monitoring
-
-🛠️ Terraform to provision infra on GCP
-
-
-
----
-
-🧱 Project Structure
-
-src/
+<h2>🧱 Project Structure</h2>
+<pre><code>src/
 ├── app/
-│   ├── api/chat/route.ts      # POST /api/chat  ➔ OpenRouter proxy
+│   ├── api/chat/route.ts      # POST /api/chat  ➜ OpenRouter proxy
 │   ├── layout.tsx             # Root layout (dark/light ThemeProvider)
 │   ├── page.tsx               # Portfolio homepage
 │   └── components/
@@ -51,194 +95,130 @@ k8s/
 └── monitoring/                # Prometheus & Grafana configs
 terraform/
 └── main.tf                    # VPC, GKE, Artifact Registry, IAM
+</code></pre>
 
-🚀 Getting Started
+<h2>🚀 Getting Started</h2>
+<h3>1. Prerequisites</h3>
+<ul>
+  <li>Node.js ≥ 18.18 LTS</li>
+  <li>Docker 24+</li>
+  <li>Terraform 1.8+</li>
+  <li>Google Cloud SDK with <code>gcloud auth login</code></li>
+  <li><a href="https://openrouter.ai/keys" target="_blank">OpenRouter API Key</a></li>
+</ul>
 
-1. Prerequisites
-
-Node.js ≥ 18.18 LTS (recommended by Next.js 15)
-
-Docker 24+
-
-Terraform 1.8+
-
-Google Cloud SDK with gcloud auth login
-
-An OpenRouter API Key – create at https://openrouter.ai/keys
-
-
-2. Clone & Install
-
-git clone https://github.com/Dasmat13/ai-portfolio.git
+<h3>2. Clone & Install</h3>
+<pre><code>git clone https://github.com/Dasmat13/ai-portfolio.git
 cd ai-portfolio
-npm install
+npm install</code></pre>
 
-3. Configuration
-
-Create .env.local in the project root:
-
-# OpenRouter
+<h3>3. Configuration</h3>
+<pre><code># .env.local
 OPENROUTER_API_KEY=sk-or-XXXXXXXXXXXXXXXX
-
-# (Optional) Vercel
 VERCEL_TOKEN=...
+NEXT_PUBLIC_POSTHOG_KEY=...</code></pre>
 
-# (Optional) PostHog / Sentry / Plausible etc.
-NEXT_PUBLIC_POSTHOG_KEY=...
+<h3>4. Local Development</h3>
+<pre><code>npm run dev           # next dev (Turbopack enabled)</code></pre>
+<p>App is served at <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></p>
 
-4. Local Development
+<h3>Lint & Type-check</h3>
+<pre><code>npm run lint
+npm run typecheck</code></pre>
 
-npm run dev           # next dev  (Turbopack enabled)
+<hr/>
 
-App is served at http://localhost:3000.
+<h2>🐳 Docker Workflow</h2>
+<pre><code>docker build -t ghcr.io/your-org/ai-portfolio:latest .
 
-Lint & type-check:
-
-npm run lint          # eslint
-npm run typecheck     # ts-c --noEmit
-
-
----
-
-🐳 Docker Workflow
-
-# Build production image
-docker build -t ghcr.io/your-org/ai-portfolio:latest .
-
-# Run container
 docker run -p 3000:3000 \
   -e OPENROUTER_API_KEY=$OPENROUTER_API_KEY \
   ghcr.io/your-org/ai-portfolio:latest
+</code></pre>
 
+<hr/>
 
----
+<h2>☸️ Kubernetes Deployment (GKE)</h2>
+<pre><code>gcloud container clusters get-credentials dev-portfolio --region=us-central1
 
-☘️ Kubernetes Deployment (GKE)
-
-# Set your cluster context
-gcloud container clusters get-credentials dev-portfolio --region=us-central1
-
-# Create namespace & deploy
 kubectl create ns portfolio
 kubectl -n portfolio apply -f k8s/deployment.yaml
+</code></pre>
+<p>Includes HPA and Let's Encrypt ClusterIssuer for Ingress-NGINX.</p>
 
-Manifests include HorizontalPodAutoscaler (CPU > 70%) and a ClusterIssuer for Let’s Encrypt if you use Ingress-NGINX.
+<hr/>
 
-
----
-
-🌍 Terraform Provisioning
-
-cd terraform
+<h2>🌍 Terraform Provisioning</h2>
+<pre><code>cd terraform
 terraform init
-terraform apply
-
-Outputs:
-
-gke_cluster_name
-
-service_account_email
-
-artifact_registry_repo
-
-
-You can reference these in GitHub Actions secrets for zero-touch environments.
-
-
----
-
-⚙️ CI/CD Pipeline
-
-deploy.yml steps:
-
-1. Check-out & caching (actions/setup-node)
-
-
-2. Unit tests + type-check
-
-
-3. Build Docker image & push (if branch = main)
-
-
-4. Deploy
-
-Vercel (vercel deploy --prod) or
-
-GKE (kubectl set image + kubectl rollout status)
-
-
-
-
-Secrets required:
-
-Name	Purpose
-
-OPENROUTER_API_KEY	Forwarded to runtime pod
-VERCEL_TOKEN	Vercel deploy (optional)
-GCP_SA_KEY	Base64 of service-account JSON for GKE
-
-
-
----
-
-📈 Observability
-
-Prometheus Operator scrapes /metrics exposed by nextjs_exporter.
-
-Grafana dashboard id: 18573 pre-imported.
-
-Alerts: high latency > 1 s, error rate > 2%.
-
-
-
----
-
-🤝 Contributing
-
-1. Fork the repo & create your branch (git checkout -b feature/awesome).
-
-
-2. Commit your changes (git commit -m 'feat: add awesome').
-
-
-3. Push to the branch (git push origin feature/awesome).
-
-
-4. Open a Pull Request.
-
-
-
-
----
-
-🗘 Roadmap
-
-[ ] Edge runtime via Next.js Middleware
-
-[ ] RAG demo with Supabase Vector
-
-[ ] GitHub Codespaces dev-container
-
-[ ] Helm chart publishing
-
-
-
----
-
-👤 Author
-
-Dasmat – @Dasmat13
-
-
----
-
-📄 License
-
-This project is licensed under the MIT License – see LICENSE for details.
-
-
----
-
-⭐ Give it a Star!
-
-If you find this project useful, please consider starring ⭐ the repo – it helps a lot!
+terraform apply</code></pre>
+<p><strong>Outputs:</strong></p>
+<ul>
+  <li>gke_cluster_name</li>
+  <li>service_account_email</li>
+  <li>artifact_registry_repo</li>
+</ul>
+
+<hr/>
+
+<h2>⚙️ CI/CD Pipeline</h2>
+<ol>
+  <li>Check-out & caching (actions/setup-node)</li>
+  <li>Unit tests + type-check</li>
+  <li>Build Docker image & push (main branch)</li>
+  <li>Deploy via Vercel or GKE</li>
+</ol>
+
+<h3>Secrets Required</h3>
+<table>
+  <tr><th>Name</th><th>Purpose</th></tr>
+  <tr><td>OPENROUTER_API_KEY</td><td>Forwarded to runtime pod</td></tr>
+  <tr><td>VERCEL_TOKEN</td><td>Vercel deploy (optional)</td></tr>
+  <tr><td>GCP_SA_KEY</td><td>Base64 of service-account JSON for GKE</td></tr>
+</table>
+
+<hr/>
+
+<h2>📈 Observability</h2>
+<p>Prometheus scrapes <code>/metrics</code> from <code>nextjs_exporter</code>.</p>
+<ul>
+  <li><strong>Grafana dashboard id:</strong> 18573</li>
+  <li><strong>Alerts:</strong> high latency > 1s, error rate > 2%</li>
+</ul>
+
+<hr/>
+
+<h2>🤝 Contributing</h2>
+<ol>
+  <li>Fork & create branch <code>feature/awesome</code></li>
+  <li>Commit <code>'feat: add awesome'</code></li>
+  <li>Push & open PR</li>
+</ol>
+
+<hr/>
+
+<h2>🗺 Roadmap</h2>
+<ul>
+  <li>[ ] Edge runtime via Next.js Middleware</li>
+  <li>[ ] RAG demo with Supabase Vector</li>
+  <li>[ ] GitHub Codespaces dev-container</li>
+  <li>[ ] Helm chart publishing</li>
+</ul>
+
+<hr/>
+
+<h2>👤 Author</h2>
+<p><strong>Dasmat</strong> – <a href="https://github.com/Dasmat13" target="_blank">@Dasmat13</a></p>
+
+<hr/>
+
+<h2>📄 License</h2>
+<p>MIT License – see LICENSE</p>
+
+<hr/>
+
+<h2>⭐ Give it a Star!</h2>
+<p>If you find this project useful, please consider starring ⭐ the repo – it helps a lot!</p>
+
+</body>
+</html>
