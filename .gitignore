@@ -14,3 +14,4 @@ build/
 gcp-service-account.json
 terraform/key.json
 .env.local.env.local
+.env.local
